@@ -1,0 +1,12 @@
+.elemContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.sign{
+    cursor: pointer;
+    font-weight: bold;
+    height: 100%;
+}

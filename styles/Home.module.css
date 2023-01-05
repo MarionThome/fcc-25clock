@@ -12,6 +12,13 @@
   font-size: 4rem;
 }
 
+.setterContainer {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .title a {
   color: #0070f3;
   text-decoration: none;
