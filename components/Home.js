@@ -6,7 +6,7 @@ function Home() {
   return (
     <div>
       <main className={styles.main}>
-        <h1>25 + 5 Clock</h1>
+        <h1 className={styles.title}>25 + 5 Clock</h1>
         <div className={styles.setterContainer}>
         <CounterSet name={"break"} initialTime={5}/>
         <CounterSet name={"session"} initialTime={25}/>

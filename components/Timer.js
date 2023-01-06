@@ -2,6 +2,10 @@ import { useState, useEffect } from "react";
 import moment from "moment";
 import { useSelector, useDispatch } from "react-redux";
 import { reset } from "../reducers/timer";
+import styles from "../styles/Timer.module.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlay, faPause, faRotate } from '@fortawesome/free-solid-svg-icons';
+
 
 function Timer() {
   const [label, setLabel] = useState("Session");
@@ -60,30 +64,31 @@ function Timer() {
   };
 
   return (
-    <div>
-      <h2 id="timer-label">{label}</h2>
-      <div>
-        <div id="time-left">
+    <div className={styles.timerContainer}>
+      <h2 id="timer-label" className={styles.label}>{label}</h2>
+
+      <div id="time-left" className={styles.time}>
           {minutes === 3600000 ? "60:00" : moment(minutes).format("mm:ss")}
-        </div>
+     
         <audio
           src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
           id="beep"
         ></audio>
+        </div>
+        <div className={styles.iconsContainer}>
 
-        <button
+        <div
           onClick={() => {
             setTimerStart(!timerStart);
           }}
           id="start_stop"
         >
-          {timerStart ? "Pause" : "Start"}
-        </button>
+          {timerStart ? <FontAwesomeIcon icon={faPause} size="2x" cursor={"pointer"}/> : <FontAwesomeIcon icon={faPlay} size="2x" cursor={"pointer"}/>}
+        </div>
+        <FontAwesomeIcon icon={faRotate} onClick={() => handleReset()} id="reset" size="2x" cursor={"pointer"}/>
+        </div>
 
-        <button onClick={() => handleReset()} id="reset">
-          Reset
-        </button>
-      </div>
+      
     </div>
   );
 }

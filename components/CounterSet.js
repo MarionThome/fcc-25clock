@@ -10,7 +10,7 @@ function CounterSet(props){
 
  return(
     <div>
-        <h2 id={`${props.name}-label`}>{props.name.charAt(0).toUpperCase() + props.name.slice(1)} length</h2>
+        <h2 id={`${props.name}-label`} className={styles.title}>{props.name.charAt(0).toUpperCase() + props.name.slice(1)} length</h2>
         <div className={styles.elemContainer}>
             <div onClick={() => dispatch(increment(props.name))} className={styles.sign} id={`${props.name}-increment`}>+</div>
             <div id={`${props.name}-length`}>{props.name === "session" ? timer.sessionTime : timer.breakTime}</div>
